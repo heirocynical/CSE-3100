@@ -1,10 +1,11 @@
 # include <stdio.h>
 
 int factorial(int n){
-    int result = 0;
+    int result = 1;
     if (n==0)
         return result;
-    result = factorial(n+1)*result;
+    result = factorial(n-1)*result;
+    return result;
 }
 
 int main(){
