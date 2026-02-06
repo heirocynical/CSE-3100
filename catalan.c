@@ -12,6 +12,11 @@ long catalan_number(int n)
         return 0;
 
     // TODO
+    int c = 1;
+    if (n==0)
+        return c;
+    c = catalan_number(n-1)*(4*n-2)/(n+1);
+    return c;
 }
 
 /* do not change main function */
