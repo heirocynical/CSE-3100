@@ -127,6 +127,8 @@ node *reverse_list(node *head) {
   // TODO
   node *p = head;
   node *c = head->next;
+  if(head == NULL || head->next == NULL)
+    return head;
   head->next = NULL;
   while(c->next != NULL){
     node *temp = c->next;
