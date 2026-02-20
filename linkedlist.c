@@ -109,6 +109,7 @@ node *delete_node(node *head, int v) {
   // TODO
   if (head->v == v)
     head->next == NULL;
+    while()
 
   if(head == NULL )
     error_message(ERR_NODELETE);
@@ -132,7 +133,7 @@ node *reverse_list(node *head) {
     c->next = p;
     p=c;
     c=temp;
-  }
+  }c->next = p;
   if(head == NULL)
     error_message(ERR_NOREVERSE);
   return c;
