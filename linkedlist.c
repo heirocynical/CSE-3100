@@ -109,7 +109,7 @@ node *delete_node(node *head, int v) {
   // TODO
   if (head->v == v)
     head->next == NULL;
-    while()
+    //while()
 
   if(head == NULL )
     error_message(ERR_NODELETE);
