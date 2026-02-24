@@ -107,14 +107,34 @@ void print_list_details(node *head) {
 
 node *delete_node(node *head, int v) {
   // TODO
-  if (head->v == v)
-    head->next == NULL;
-    //while()
+    if (head == NULL) {
+        error_message(ERR_NODELETE);
+        return NULL;
+    }
+    if (head->v == v) {
+        node *temp = head;
+        head = head->next;
+        free(temp);
+        return head;
+    }
+    // Case 2: deleting non-head node
+    node *curr = head;
+    while (curr->next != NULL && curr->next->v != v) {
+        curr = curr->next;
+    }
+    // If value not found
+    if (curr->next == NULL) {
+        error_message(ERR_NODELETE);
+        return head;
+    }
+    // Delete node
+    node *temp = curr->next;
+    curr->next = temp->next;
+    free(temp);
 
-  if(head == NULL )
-    error_message(ERR_NODELETE);
-  return head;
+    return head;
 }
+
 
 /*
  * Given a pointer to the head node of an acyclic list, change the
